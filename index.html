@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>得勝者文教｜2026 暑期升學課程</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237B2252'/%3E%3Ctext x='16' y='23' font-size='17' font-family='Arial,Helvetica,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3EV+%3C/text%3E%3C/svg%3E" />
+  <title>金刀老師｜高中化學・得勝者文教</title>
+  <meta name="description" content="前師大附中科學班導師・師鐸獎得主・33年教學經驗。金刀老師讓學生真的懂化學、愛化學。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet" />
@@ -21,583 +21,703 @@
       --ink-2: #444;
       --ink-3: #888;
       --bg: #ffffff;
+      --dark: #0f0509;
       --r: 14px;
       --r-lg: 24px;
       --shadow: 0 8px 32px rgba(123,34,82,.12);
     }
 
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: 'Noto Sans TC', sans-serif;
-      background: var(--bg);
+      background: #fff;
       color: var(--ink);
-      min-height: 100vh;
+      overflow-x: hidden;
       word-break: keep-all;
       overflow-wrap: break-word;
-      overflow-x: hidden;
     }
+
+    /* ── 手機專屬斷行 helper ── */
+    .br-m { display: none; }
+    @media (max-width: 760px) { .br-m { display: inline; } }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 48px;
+      padding: 18px 40px;
       background: rgba(15,5,9,.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      transition: padding .3s;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      transition: padding .3s ease, box-shadow .3s ease;
     }
-    nav.scrolled { padding: 12px 48px; }
+    nav.scrolled { padding: 12px 40px; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
     .nav-logo {
       display: flex; align-items: center; gap: 10px;
-      font-weight: 900; font-size: 16px; color: #fff;
-      text-decoration: none;
+      font-size: 15px; font-weight: 700; color: #fff; text-decoration: none;
     }
-    .nav-logo .v-badge {
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--brand);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 900; font-size: 14px;
+    .v-badge {
+      background: var(--brand); color: #fff;
+      font-size: 11px; font-weight: 900; letter-spacing: .05em;
+      padding: 3px 7px; border-radius: 6px;
     }
-    .nav-links {
-      display: flex; align-items: center; gap: 28px;
-    }
+    .nav-links { display: flex; gap: 28px; }
     .nav-links a {
-      color: rgba(255,255,255,.65);
-      font-size: 14px; font-weight: 500;
-      text-decoration: none;
+      font-size: 14px; color: rgba(255,255,255,.65); text-decoration: none;
       transition: color .2s;
     }
-    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
     .nav-cta {
-      background: var(--brand);
-      color: #fff; font-weight: 700; font-size: 14px;
-      padding: 10px 24px; border-radius: 100px;
-      text-decoration: none;
-      transition: background .2s, transform .2s;
+      background: var(--brand); color: #fff;
+      font-size: 13px; font-weight: 700;
+      padding: 8px 20px; border-radius: 100px;
+      text-decoration: none; transition: background .2s;
     }
-    .nav-cta:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--brand-dark); }
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+    }
 
     /* ── HERO ── */
-    .hero-wrap {
-      background:
-        radial-gradient(ellipse 60% 55% at 10% 30%, rgba(123,34,82,.7) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 45% at 90% 70%, rgba(74,17,51,.6) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 35% at 55% 5%, rgba(201,168,76,.25) 0%, transparent 50%),
-        #0f0509;
+    .hero {
+      background: linear-gradient(160deg, #0f0509 0%, #2a0d1e 60%, #1a0a14 100%);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 48px 80px;
-      text-align: center;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,.1);
-      color: rgba(255,255,255,.75);
-      font-size: 13px; font-weight: 700;
-      padding: 6px 18px; border-radius: 100px;
-      letter-spacing: .04em;
-      margin-bottom: 32px;
-      border: 1px solid rgba(255,255,255,.15);
-    }
-    .hero-eyebrow .dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:.35;} }
-
-    .hero-headline {
-      font-family: 'Noto Serif TC', serif;
-      font-size: clamp(38px, 6vw, 72px);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.15;
-      letter-spacing: -.02em;
-      margin-bottom: 20px;
-    }
-    .hero-headline .hl { color: var(--gold); }
-
-    .hero-sub {
-      font-size: clamp(16px, 1.8vw, 19px);
-      color: rgba(255,255,255,.6);
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 560px;
-    }
-
-    /* 兩個對象的快速切換 chip */
-    .aud-jump {
-      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
-      margin-bottom: 60px;
-    }
-    .aud-jump a {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.15);
-      color: rgba(255,255,255,.85);
-      font-size: 14px; font-weight: 700;
-      padding: 10px 20px; border-radius: 100px;
-      text-decoration: none;
-      transition: background .2s, border-color .2s, transform .2s;
-    }
-    .aud-jump a:hover { background: rgba(255,255,255,.12); border-color: rgba(201,168,76,.5); transform: translateY(-1px); }
-    .aud-jump a .yr { color: var(--gold); }
-
-    /* ── CARD GRID ── */
-    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      max-width: 900px;
-      width: 100%;
-    }
-
-    /* ── 對象分組標題 ── */
-    .group-label {
-      grid-column: 1 / -1;
-      display: flex; align-items: center; gap: 16px;
-      text-align: left;
-      margin: 28px 0 2px;
-      scroll-margin-top: 90px;
-    }
-    .group-label:first-child { margin-top: 0; }
-    .group-label .g-badge {
-      display: inline-flex; align-items: baseline; gap: 10px;
-      flex-shrink: 0;
-    }
-    .group-label .g-tier {
-      font-family: 'Noto Serif TC', serif;
-      font-size: clamp(20px, 3vw, 26px);
-      font-weight: 900; color: #fff; line-height: 1;
-    }
-    .group-label .g-tier .hl { color: var(--gold); }
-    .group-label .g-desc {
-      font-size: 13px; color: rgba(255,255,255,.5); font-weight: 500;
-    }
-    .group-label::after {
-      content: ''; flex: 1; height: 1px;
-      background: linear-gradient(90deg, rgba(201,168,76,.5), rgba(255,255,255,.05));
-    }
-
-    .card {
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: transform .3s ease, box-shadow .3s ease;
-      cursor: pointer;
-    }
-    .card:hover { transform: translateY(-4px); }
-
-    /* APEX card — full-width, dark */
-    .card-apex {
-      grid-column: 1 / -1;
-      background: #000;
-      padding: 48px 56px;
-      flex-direction: row;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      border: 1px solid rgba(255,255,255,.08);
+      padding: 120px 80px 80px;
+      gap: 60px;
     }
-    .card-apex:hover { box-shadow: 0 24px 60px rgba(0,0,0,.5); }
-    .card-apex-left { flex: 1; }
-    .card-apex-tag {
-      font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--gold);
+    .hero-content { color: #fff; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      background: rgba(201,168,76,.15); border: 1px solid rgba(201,168,76,.35);
+      color: var(--gold); font-size: 12px; font-weight: 700;
+      padding: 6px 16px; border-radius: 100px;
+      letter-spacing: .06em; margin-bottom: 28px;
+      max-width: 100%;
+    }
+    .hero-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(52px, 7vw, 80px); font-weight: 900;
+      color: #fff; line-height: 1.1; margin-bottom: 8px;
+      letter-spacing: -.02em;
+    }
+    .hero-subject {
+      font-size: 16px; font-weight: 700; color: var(--gold);
+      margin-bottom: 24px; letter-spacing: .04em;
+    }
+    .hero-tagline {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(20px, 2.5vw, 28px); font-weight: 700;
+      color: rgba(255,255,255,.9); line-height: 1.5;
       margin-bottom: 12px;
     }
-    .card-apex-title {
-      font-family: 'Noto Serif TC', serif;
-      font-size: clamp(24px, 3vw, 36px);
-      font-weight: 900; color: #fff;
-      line-height: 1.2; margin-bottom: 10px;
+    .hero-tagline span { color: var(--gold); }
+    .hero-sub {
+      font-size: 15px; color: rgba(255,255,255,.55);
+      line-height: 1.8; margin-bottom: 40px;
     }
-    .card-apex-sub {
-      font-size: 15px; color: rgba(255,255,255,.5);
-      line-height: 1.6; margin-bottom: 24px;
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold); color: #3a2600;
+      font-size: 15px; font-weight: 900;
+      padding: 13px 28px; border-radius: 100px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 24px rgba(201,168,76,.25);
+      display: inline-block;
     }
-    .card-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 14px; font-weight: 700; color: var(--gold);
-      transition: gap .2s;
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,.35); }
+    .btn-ghost {
+      background: transparent; color: rgba(255,255,255,.8);
+      font-size: 15px; font-weight: 700;
+      padding: 13px 28px; border-radius: 100px;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,.25);
+      transition: border-color .2s, color .2s;
+      display: inline-block;
     }
-    .card:hover .card-link { gap: 10px; }
-    .card-link-brand { color: var(--brand); }
-    .card-apex-stat {
-      text-align: center; flex-shrink: 0;
+    .btn-ghost:hover { border-color: rgba(255,255,255,.6); color: #fff; }
+    .hero-photo-wrap {
+      display: flex; align-items: flex-end; justify-content: center;
+      height: 100%;
     }
-    .card-apex-num {
-      font-family: 'Noto Serif TC', serif;
-      font-size: clamp(64px, 8vw, 96px);
-      font-weight: 900; color: var(--gold);
-      letter-spacing: -.04em; line-height: 1;
+    .hero-photo {
+      width: 100%; max-width: 420px; height: 500px;
+      border-radius: var(--r-lg);
+      object-fit: cover; object-position: center 65%;
+      filter: drop-shadow(0 20px 60px rgba(123,34,82,.5));
     }
-    .card-apex-num-pct { font-size: .45em; color: rgba(201,168,76,.7); }
-    .card-apex-num-label { font-size: 13px; color: rgba(255,255,255,.4); margin-top: 6px; }
-
-    /* 試聽 card */
-    .card-shijian {
-      grid-column: 1 / -1;
-      background: var(--brand-dark);
-      padding: 40px 56px;
-      border: 1px solid rgba(255,255,255,.06);
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
+    .hero-photo-placeholder {
+      width: 100%; max-width: 420px; height: 520px;
+      border-radius: var(--r-lg);
+      background: rgba(255,255,255,.04);
+      border: 1px dashed rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.25); font-size: 13px;
     }
-    .card-shijian:hover { box-shadow: 0 20px 48px rgba(74,17,51,.5); }
-    .card-shijian-left { flex: 1; }
-    .card-shijian-right {
-      display: flex; flex-direction: column;
-      align-items: flex-end; gap: 12px; flex-shrink: 0;
-    }
-    .card-shijian-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11px; font-weight: 700; letter-spacing: .08em;
-      color: var(--gold); text-transform: uppercase;
-      background: rgba(201,168,76,.12);
-      border: 1px solid rgba(201,168,76,.35);
-      padding: 4px 12px; border-radius: 100px;
-      margin-bottom: 20px;
-    }
-    .card-shijian-title {
-      font-family: 'Noto Serif TC', serif;
-      font-size: clamp(24px, 2.8vw, 36px);
-      font-weight: 900; color: #fff;
-      line-height: 1.2; margin-bottom: 10px;
-    }
-    .card-shijian-sub {
-      font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.7;
-      margin-bottom: 0;
-    }
-    .card-shijian-rewards {
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .card-reward {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 13px; font-weight: 700; color: rgba(255,255,255,.8);
-      justify-content: flex-end;
-    }
-    .card-reward .badge {
-      background: rgba(201,168,76,.15);
-      border: 1px solid rgba(201,168,76,.4);
-      color: var(--gold); font-size: 12px; font-weight: 700;
-      padding: 3px 10px; border-radius: 100px;
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; text-align: center; gap: 40px; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo { height: 320px; }
+      .hero-ctas { justify-content: center; }
     }
 
-    /* 讀書班 / 升高二 card（品牌漸層全寬） */
-    .card-dushu {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, #3a0d22 0%, #7B2252 55%, #9c3b6a 100%);
-      border: 1px solid rgba(201,168,76,.25);
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 40px; padding: 44px 56px;
+    /* ── PAIN ── */
+    .pain {
+      padding: 100px 40px;
+      background: #fff;
     }
-    .card-dushu:hover { box-shadow: 0 24px 60px rgba(123,34,82,.45); }
-    .card-dushu-left { flex: 1; }
-    .card-dushu-tag {
-      display: inline-flex; align-items: center; gap: 7px;
-      font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      color: var(--gold); text-transform: uppercase; margin-bottom: 14px;
+    .pain-inner { max-width: 680px; margin: 0 auto; }
+    .sec-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--brand); margin-bottom: 14px;
     }
-    .card-dushu-tag::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold); display: inline-block;
-      animation: pulse 2.4s ease-in-out infinite;
-    }
-    .card-dushu-title {
+    .sec-title {
       font-family: 'Noto Serif TC', serif;
-      font-size: clamp(24px, 3vw, 36px); font-weight: 900; color: #fff;
-      line-height: 1.25; margin-bottom: 12px;
+      font-size: clamp(26px, 3.5vw, 38px); font-weight: 900;
+      color: var(--ink); line-height: 1.25; margin-bottom: 32px;
+      text-wrap: balance; word-break: keep-all;
     }
-    .card-dushu-title .gold { color: var(--gold); }
-    .card-dushu-sub { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 22px; }
-    .card-dushu-meta { display: flex; gap: 8px; flex-wrap: wrap; }
-    .dushu-chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
-      color: rgba(255,255,255,.9); font-size: 12px; font-weight: 700;
-      padding: 6px 14px; border-radius: 100px;
+    .sec-title .hl { color: var(--brand); }
+    .pain-body {
+      font-size: 17px; color: var(--ink-2); line-height: 1.9;
+      margin-bottom: 36px; text-wrap: pretty;
     }
-    .dushu-chip b { color: var(--gold); }
-    .card-dushu-right {
-      flex-shrink: 0; text-align: center;
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    .pain-body p + p { margin-top: 18px; }
+    /* 長段內文：自動填滿寬度，不逐句手刻 */
+    .pain-body p { word-break: normal; line-break: strict; }
+    .pain-quote {
+      border-left: 3px solid var(--brand);
+      padding-left: 20px;
+      font-style: italic;
+      font-size: 17px; color: var(--ink-2); line-height: 1.8;
+      margin-top: 32px;
+      word-break: normal; line-break: strict;
     }
-    .card-dushu-price {
-      font-family: 'Noto Serif TC', serif; line-height: 1;
-    }
-    .card-dushu-price .cur { font-size: 22px; font-weight: 900; color: var(--gold); }
-    .card-dushu-price .num { font-size: clamp(48px, 7vw, 72px); font-weight: 900; color: var(--gold); letter-spacing: -.03em; }
-    .card-dushu-price-label { font-size: 12px; color: rgba(255,255,255,.5); }
-    .card-dushu-right .card-link { margin-top: 14px; }
+    .pain-quote strong { color: var(--brand-dark); font-style: normal; }
 
-    /* Teacher cards */
-    .card-teacher {
-      background: var(--brand-light);
-      padding: 36px 36px 40px;
-      border: 1.5px solid rgba(123,34,82,.1);
+    /* ── GUIDE ── */
+    .guide {
+      background: var(--dark);
+      padding: 100px 0 120px;
+      overflow-x: hidden;
     }
-    .card-teacher:hover { box-shadow: var(--shadow); }
-    .card-teacher-num {
-      font-size: 11px; font-weight: 700; letter-spacing: .1em;
-      color: rgba(123,34,82,.4); text-transform: uppercase;
-      margin-bottom: 20px;
+    .guide-header { padding: 0 80px; margin-bottom: 64px; }
+    .guide-header .sec-eyebrow { color: var(--gold); }
+    .guide-header .sec-title { color: #fff; }
+    .guide-header .sec-title .hl { color: var(--gold); }
+    .guide-body {
+      display: grid;
+      grid-template-columns: 42% 58%;
+      align-items: start;
+      padding: 0 80px;
+      gap: 64px;
     }
-    .card-teacher-badge {
-      display: inline-block; background: var(--gold);
-      color: #3a2600; font-size: 11px; font-weight: 900;
-      padding: 3px 10px; border-radius: 100px; letter-spacing: .03em;
-      margin-bottom: 14px;
+    /* LEFT */
+    .guide-left {
+      position: sticky; top: 100px; min-width: 0;
     }
-    .card-teacher-name {
+    .guide-teacher-img {
+      width: 100%; border-radius: var(--r-lg);
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+      margin-bottom: 28px;
+    }
+    .guide-teacher-placeholder {
+      width: 100%; height: 380px;
+      border-radius: var(--r-lg);
+      background: rgba(255,255,255,.04);
+      border: 1px dashed rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.2); font-size: 13px;
+      margin-bottom: 28px;
+    }
+    .guide-name {
       font-family: 'Noto Serif TC', serif;
-      font-size: clamp(22px, 2.5vw, 30px);
-      font-weight: 900; color: var(--ink);
+      font-size: 36px; font-weight: 900; color: #fff;
       margin-bottom: 10px;
     }
-    .card-teacher-desc {
-      font-size: 14px; color: var(--ink-2); line-height: 1.7;
-      margin-bottom: 28px; flex: 1;
+    .guide-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .gbadge {
+      background: var(--gold); color: #3a2600;
+      font-size: 11px; font-weight: 900;
+      padding: 4px 12px; border-radius: 100px;
+      letter-spacing: .04em;
     }
+    .gbadge.outline {
+      background: transparent; color: var(--gold);
+      border: 1px solid rgba(201,168,76,.4);
+    }
+    .guide-quote {
+      font-size: 15px; color: rgba(255,255,255,.55);
+      line-height: 1.8; font-style: italic;
+      border-left: 2px solid rgba(201,168,76,.4);
+      padding-left: 16px; margin-top: 4px;
+      word-break: normal; line-break: strict;
+    }
+
+    /* RIGHT */
+    .guide-right { padding: 8px 0; min-width: 0; }
+    .accord-list-wrap { position: relative; }
+    .accord-list { list-style: none; border-top: 1px solid rgba(255,255,255,.08); }
+    .accord-item { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .accord-head {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 0; gap: 16px; text-align: left;
+    }
+    .accord-label {
+      font-size: 17px; font-weight: 700; color: rgba(255,255,255,.75);
+      transition: color .2s; line-height: 1.4;
+      flex: 1; min-width: 0;
+      word-break: normal; line-break: strict;
+    }
+    .accord-head.active .accord-label { color: #fff; }
+    .accord-arrow {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,.06); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 18px; transition: transform .3s, background .2s;
+    }
+    .accord-head.active .accord-arrow { transform: rotate(45deg); background: rgba(201,168,76,.15); }
+    .accord-body {
+      display: none;
+      padding: 0 0 24px;
+      font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.9;
+      text-wrap: pretty;
+      word-break: normal; line-break: strict;
+    }
+    .accord-item.open .accord-body { display: block; }
+
+    /* guide mobile */
+    @media (max-width: 768px) {
+      .guide { padding: 72px 0 80px; }
+      .guide-header { padding: 0 20px; margin-bottom: 40px; }
+      .guide-body {
+        grid-template-columns: 1fr;
+        padding: 0 16px 60px;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        gap: 32px;
+      }
+      .guide-left {
+        position: static; flex: none;
+        width: 100%; overflow: hidden; padding: 0;
+      }
+      .guide-right {
+        position: static; order: -1;
+        width: 100%; max-width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .accord-list {
+        display: flex; overflow-x: auto; gap: 8px;
+        border-top: none; scrollbar-width: none;
+        padding: 4px 0 12px; margin: 12px 0 0;
+      }
+      .accord-list::-webkit-scrollbar { display: none; }
+      .accord-item { flex-shrink: 0; border-bottom: none; }
+      .accord-head {
+        background: var(--brand-light);
+        border: 1.5px solid rgba(123,34,82,.2);
+        border-radius: 100px;
+        padding: 7px 16px;
+        font-size: 13px; cursor: pointer;
+        white-space: nowrap; display: block; width: auto;
+      }
+      .accord-head.active {
+        background: var(--brand); color: #fff;
+        border-color: var(--brand);
+      }
+      .accord-head .accord-label { font-size: 13px; color: var(--brand); }
+      .accord-head.active .accord-label { color: #fff; }
+      .accord-arrow { display: none; }
+      .accord-body { display: none !important; }
+    }
+
+    .guide-mobile-desc {
+      display: none;
+      background: rgba(255,255,255,.05); border-radius: 16px;
+      padding: 16px 20px; margin: 12px 0 0;
+      min-height: 72px; font-size: 14px;
+      color: rgba(255,255,255,.6); line-height: 1.9;
+    }
+    .guide-mobile-desc strong {
+      display: block; font-size: 11px; font-weight: 700;
+      color: var(--gold); margin-bottom: 6px;
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    @media (max-width: 768px) {
+      .guide-mobile-desc { display: block; }
+    }
+
+    /* ── TESTIMONIAL ── */
+    .testimonial {
+      padding: 80px 40px;
+      background: var(--brand-light);
+    }
+    .testimonial-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .testimonial blockquote {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(22px, 3vw, 32px); font-weight: 900;
+      color: var(--brand-dark); line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .testimonial blockquote::before { content: "❝ "; color: var(--brand); }
+    .testimonial blockquote::after { content: " ❞"; color: var(--brand); }
+    .testimonial cite { font-size: 14px; color: var(--ink-3); font-style: normal; }
+
+    /* ── VALUE ── */
+    .value {
+      padding: 100px 80px;
+      background: #fff;
+    }
+    .value-header { text-align: center; margin-bottom: 56px; }
+    .value-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .value-card {
+      background: var(--brand-light);
+      border-radius: var(--r-lg);
+      padding: 40px 28px;
+      border: 1.5px solid rgba(123,34,82,.1);
+      transition: transform .3s ease, box-shadow .3s ease;
+      min-width: 0; /* 元凶4：grid子項防撐出 */
+    }
+    .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .value-icon { font-size: 36px; margin-bottom: 20px; display: block; }
+    .value-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 20px; font-weight: 900; color: var(--ink);
+      margin-bottom: 14px; line-height: 1.35;
+    }
+    .value-desc { font-size: 15px; color: var(--ink-2); line-height: 1.8; word-break: normal; line-break: strict; }
+
+    @media (max-width: 768px) {
+      .value { padding: 72px 20px; }
+      .value-grid {
+        display: flex; overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px; padding-bottom: 16px;
+        scrollbar-width: none;
+      }
+      .value-grid::-webkit-scrollbar { display: none; }
+      .value-card {
+        flex: 0 0 85vw;
+        scroll-snap-align: start;
+      }
+    }
+
+    /* ── SIGNUP ── */
+    .signup {
+      background: var(--brand-dark);
+      padding: 100px 40px;
+      text-align: center;
+    }
+    .signup h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(28px, 4vw, 44px); font-weight: 900;
+      color: #fff; line-height: 1.3; margin-bottom: 16px;
+    }
+    .signup h2 .hl { color: var(--gold); }
+    .signup p { font-size: 17px; color: rgba(255,255,255,.6); margin-bottom: 36px; line-height: 1.7; word-break: normal; line-break: strict; }
+    .signup-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .signup { padding: 72px 24px; }
+    }
+
+    /* ── LINE FLOAT ── */
+    .line-float {
+      position: fixed; bottom: 28px; right: 24px; z-index: 200;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #06C755;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(6,199,85,.4);
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .line-float:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(6,199,85,.5); }
 
     /* ── FOOTER ── */
     footer {
-      background: #0f0509;
-      color: rgba(255,255,255,.35);
-      padding: 32px 48px;
-      text-align: center;
-      font-size: 13px;
+      background: #0f0509; color: rgba(255,255,255,.35);
+      padding: 32px 40px; text-align: center; font-size: 13px;
       border-top: 1px solid rgba(255,255,255,.06);
     }
     footer a { color: rgba(255,255,255,.5); text-decoration: none; }
     footer a:hover { color: #fff; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 760px) {
-      nav { padding: 14px 20px; }
-      nav.scrolled { padding: 10px 20px; }
-      .nav-links { display: none; }
-      .hero-wrap { padding: 100px 20px 60px; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .group-label { margin: 22px 0 2px; }
-      .card-apex {
-        flex-direction: column; text-align: center;
-        padding: 36px 28px;
-      }
-      .card-apex-stat { order: -1; }
-      .card-shijian {
-        flex-direction: column; padding: 28px 24px 32px;
-      }
-      .card-shijian-right { align-items: flex-start; }
-      .card-reward { justify-content: flex-start; }
-      .card-teacher { padding: 28px 24px 32px; }
-      .card-dushu { flex-direction: column; padding: 30px 24px 34px; }
-      .card-dushu-right { flex-direction: row; align-items: baseline; gap: 12px; }
-      footer { padding: 28px 20px; }
-    }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav id="topNav">
-    <a class="nav-logo" href="#">
+    <a class="nav-logo" href="index.html">
       <div class="v-badge">V+</div>
       得勝者文教
     </a>
     <div class="nav-links">
-      <a href="#g-sheng1">國三升高一</a>
-      <a href="#g-sheng2">升高二</a>
-      <a href="xie.html">解創智老師</a>
       <a href="chen.html">陳建州老師</a>
-      <a href="jindao.html">金刀老師</a>
-      <a href="apex.html">APEX</a>
+      <a href="xie.html">解創智老師</a>
+      <a href="jindao.html" class="active">金刀老師</a>
+      <a href="apex.html">APEX 巔峰班</a>
+      <a href="trial.html">試聽活動</a>
+      <a href="dushu.html">暑期班</a>
     </div>
     <a class="nav-cta" href="trial.html">立即報名試聽</a>
   </nav>
 
-  <!-- HERO -->
-  <div class="hero-wrap">
-    <div class="hero-eyebrow">
-      <div class="dot"></div>
-      2026 得勝者文教・暑期升學課程
+  <!-- ① HERO -->
+  <section class="hero">
+    <div class="hero-content reveal">
+      <div class="hero-badge">🏆 師鐸獎得主・前師大附中科學班導師</div>
+      <h1 class="hero-name">金刀老師</h1>
+      <p class="hero-subject">高中化學・33 年教學經驗</p>
+      <p class="hero-tagline">
+        真的<span>懂</span>化學<br>不只是硬背
+      </p>
+      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:12px;padding:12px 20px;margin-bottom:28px;">
+        <span style="font-size:20px;">📅</span>
+        <div>
+          <div style="font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.06em;margin-bottom:2px;">免費試聽</div>
+          <div style="font-size:15px;color:#fff;font-weight:700;">7/18（六）18:30–21:30<br class="br-m">・實體講座</div>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#signup" class="btn-primary">立即報名試聽</a>
+        <a href="#guide" class="btn-ghost">認識金刀老師</a>
+      </div>
     </div>
+    <div class="hero-photo-wrap reveal">
+      <img src="teacher-jindao-hiking.jpg" alt="金刀老師" class="hero-photo"
+           onerror="this.outerHTML='<div class=\'hero-photo-placeholder\'>老師照片</div>'" />
+    </div>
+  </section>
 
-    <h1 class="hero-headline">
-      高中，<br>從這個暑假開始<span class="hl">贏</span>。
-    </h1>
+  <!-- ② PAIN -->
+  <section class="pain">
+    <div class="pain-inner reveal">
+      <p class="sec-eyebrow">為什麼高中化學這麼難？</p>
+      <h2 class="sec-title">因為大部分的人，<br>沒有把<span class="hl">化學的邏輯</span>真正建起來。</h2>
+      <div class="pain-body">
+        <p>用背的，考題換一個細節就不會了；<br>真正理解，題目怎麼出都能應對。</p>
+        <p>108 課綱之後，這個差距更大！<br>素養考題不考你背了什麼，而是考你懂不懂。</p>
+      </div>
+      <div class="pain-quote">
+        <strong>「要真的懂不是硬背，才有能力能從容應付未來的挑戰。」</strong><br>
+        — 金刀老師
+      </div>
+    </div>
+  </section>
 
-    <p class="hero-sub">
-      不論是準備升高一、還是準備升高二，<br>
-      都有一套為你設計的暑期課程。<br>找到最適合你的那一個。
+  <!-- ③ GUIDE -->
+  <section class="guide" id="guide">
+    <div class="guide-header reveal">
+      <p class="sec-eyebrow">金刀老師是誰</p>
+      <h2 class="sec-title">33 年，帶出真正<br class="br-m"><span class="hl">懂化學、愛化學</span>的學生。</h2>
+    </div>
+    <div class="guide-body">
+      <!-- LEFT -->
+      <div class="guide-left reveal">
+        <img src="teacher-jindao-2.png" alt="金刀老師" class="guide-teacher-img"
+             onerror="this.outerHTML='<div class=\'guide-teacher-placeholder\'>老師照片</div>'" />
+        <div class="guide-name">金刀（江青釗）</div>
+        <div class="guide-badges">
+          <span class="gbadge">化學</span>
+          <span class="gbadge outline">前師大附中科學班導師</span>
+          <span class="gbadge outline">師鐸獎得主</span>
+        </div>
+        <p class="guide-quote">「他們認為我訓練出來的學生，是真的懂化學、愛化學。」</p>
+      </div>
+      <!-- RIGHT -->
+      <div class="guide-right reveal">
+        <div class="accord-list-wrap">
+          <ul class="accord-list">
+            <li class="accord-item">
+              <button class="accord-head">
+                <span class="accord-label">循序漸進，建立真正的應考實力</span>
+                <span class="accord-arrow">+</span>
+              </button>
+              <div class="accord-body">
+                金刀老師不趕進度，不跳步驟。每一個化學概念都要確實建起來，才接下一個。這樣累積出來的，是從根基長出來的實力——而不是臨時抱佛腳、考完就忘的記憶。
+              </div>
+            </li>
+            <li class="accord-item">
+              <button class="accord-head">
+                <span class="accord-label">鉅細靡遺，讓學生真正透徹理解</span>
+                <span class="accord-arrow">+</span>
+              </button>
+              <div class="accord-body">
+                108 課綱素養考題，考的是「懂不懂」，不是「背沒背」。金刀老師的教學鉅細靡遺，每個細節都說清楚——讓學生真的理解背後的原理，而不只是記住答案。遇到沒見過的題型，才能從容應對。
+              </div>
+            </li>
+            <li class="accord-item">
+              <button class="accord-head">
+                <span class="accord-label">讓化學有畫面，抽象概念變具體</span>
+                <span class="accord-arrow">+</span>
+              </button>
+              <div class="accord-body">
+                金刀老師對每一個實驗原理的了解之深，讓他能把抽象的化學說得有畫面——學生在腦子裡就能看到反應在發生。<br>能看到的東西，才會真的懂，也才會記得住。
+              </div>
+            </li>
+            <li class="accord-item">
+              <button class="accord-head">
+                <span class="accord-label">提振學習鬥志，讓學生知道為什麼讀</span>
+                <span class="accord-arrow">+</span>
+              </button>
+              <div class="accord-body">
+                教學不只是把課程教完。金刀老師更在意的，是讓每一個學生知道自己的未來在哪裡。有了方向感，學習的鬥志才會持續——不是為了考試撐著，而是真的想繼續。
+              </div>
+            </li>
+          </ul>
+          <div class="guide-mobile-desc" id="guideMobileDesc"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ TESTIMONIAL -->
+  <section class="testimonial reveal">
+    <div class="testimonial-inner">
+      <p class="sec-eyebrow" style="color:var(--brand);margin-bottom:20px;">學生的評價</p>
+      <blockquote>真的懂化學、愛化學</blockquote>
+      <cite>— 金刀老師的學生</cite>
+    </div>
+  </section>
+
+  <!-- ⑤ VALUE -->
+  <section class="value">
+    <div class="value-header reveal">
+      <p class="sec-eyebrow" style="color:var(--brand);">跟著金刀老師，你會得到</p>
+      <h2 class="sec-title">不只是化學成績，<br>是<span class="hl">真正帶得走的能力</span>。</h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card reveal">
+        <span class="value-icon">🔬</span>
+        <h3 class="value-title">真的懂，不是背</h3>
+        <p class="value-desc">懂原理的學生，遇到沒見過的題目還是能解。108 課綱之後，「背」的人被淘汰，「懂」的人從容應對——金刀老師教的，正是這個。</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-icon">⚗️</span>
+        <h3 class="value-title">從怕化學，到愛化學</h3>
+        <p class="value-desc">大多數學生怕化學、撐化學。金刀老師讓學生看到化學的有趣——不是靠死記，是靠真正理解每一個「為什麼」。</p>
+      </div>
+      <div class="value-card reveal">
+        <span class="value-icon">🧭</span>
+        <h3 class="value-title">讀書，知道為什麼</h3>
+        <p class="value-desc">有方向的學生才有鬥志。金刀老師讓學生看到自己的未來在哪裡——這比考試成績更重要。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ SIGNUP -->
+  <section class="signup reveal" id="signup">
+    <h2>開對頭，<span class="hl">三年不一樣</span>。</h2>
+    <p>
+      高一第一章，是化學的起點。<br>
+      跟金刀老師學，從第一堂課就建對邏輯。
     </p>
-
-    <div class="aud-jump">
-      <a href="#g-sheng1"><span class="yr">國三升高一</span>・升學數學</a>
-      <a href="#g-sheng2"><span class="yr">升高二</span>・暑期讀書班</a>
-    </div>
-
-    <!-- CARDS -->
-    <div class="cards-grid">
-
-      <!-- ══════ 國三升高一 ══════ -->
-      <div class="group-label" id="g-sheng1">
-        <span class="g-badge">
-          <span class="g-tier">國三升高一</span>
-        </span>
-        <span class="g-desc">升學數學・化學課程・名師 × 試聽 × 巔峰班</span>
+    <div style="display:inline-flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px 28px;margin-bottom:32px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:left;">
+        <div style="font-size:11px;color:var(--gold-light);font-weight:700;letter-spacing:.08em;margin-bottom:4px;">📅 免費試聽場次</div>
+        <div style="font-size:20px;font-weight:900;color:#fff;">7/18（六）18:30–21:30</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:2px;">實體講座・台北得勝者文教</div>
       </div>
-
-      <!-- 解創智 -->
-      <a class="card card-teacher" href="xie.html">
-        <div class="card-teacher-num">數學老師 01</div>
-        <span class="card-teacher-badge">30 年數學名師</span>
-        <h2 class="card-teacher-name">解創智老師</h2>
-        <p class="card-teacher-desc">
-          用最基礎的概念，解最困難的題目——<br>
-          帶出無數醫牙電資頂大學生。
-        </p>
-        <span class="card-link card-link-brand">認識解老師 →</span>
-      </a>
-
-      <!-- 陳建州 -->
-      <a class="card card-teacher" href="chen.html">
-        <div class="card-teacher-num">數學老師 02</div>
-        <span class="card-teacher-badge">數學鬼才</span>
-        <h2 class="card-teacher-name">陳建州老師</h2>
-        <p class="card-teacher-desc">
-          變化多端的題目，在他手裡都能拆解至基本觀念。<br>
-          從基本觀念連結至多種解法，打開數學思維，<br>
-          讓學生真正理解！
-        </p>
-        <span class="card-link card-link-brand">認識建州老師 →</span>
-      </a>
-
-      <!-- 金刀 -->
-      <a class="card card-teacher" href="jindao.html">
-        <div class="card-teacher-num">化學老師 01</div>
-        <span class="card-teacher-badge">師鐸獎得主</span>
-        <h2 class="card-teacher-name">金刀老師</h2>
-        <p class="card-teacher-desc">
-          前師大附中科學班導師・33 年教學經驗——<br>
-          帶出真正懂化學、愛化學的學生。
-        </p>
-        <span class="card-link card-link-brand">認識金刀老師 →</span>
-      </a>
-
-      <!-- 試聽活動 -->
-      <a class="card card-shijian" href="trial.html">
-        <div class="card-shijian-left">
-          <div class="card-shijian-tag">
-            <span style="width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;"></span>
-            限時試聽活動
-          </div>
-          <h2 class="card-shijian-title">
-            兩位老師都聽，<br>現金 1,000 元。
-          </h2>
-          <p class="card-shijian-sub">免費試聽，開學前找到最對的老師</p>
-        </div>
-        <div class="card-shijian-right">
-          <div class="card-shijian-rewards">
-            <div class="card-reward">
-              聽一堂 <span class="badge">☕ 星巴克</span>
-            </div>
-            <div class="card-reward">
-              兩堂都聽 <span class="badge">💰 千元現金</span>
-            </div>
-          </div>
-          <span class="card-link" style="margin-top:8px;">查看試聽場次 →</span>
-        </div>
-      </a>
-
-      <!-- APEX 全寬 -->
-      <a class="card card-apex" href="apex.html">
-        <div class="card-apex-left">
-          <p class="card-apex-tag">APEX 巔峰班</p>
-          <h2 class="card-apex-title">
-            學測數A 滿分路線。<br>提早開始，才來得及。
-          </h2>
-          <p class="card-apex-sub">
-            台大醫學・電機・資工的入場門票——<br>數A 15 級分，全台只有這麼少人做到。
-          </p>
-          <span class="card-link">了解 APEX 巔峰班 →</span>
-        </div>
-        <div class="card-apex-stat">
-          <div class="card-apex-num">1.23<span class="card-apex-num-pct">%</span></div>
-          <div class="card-apex-num-label">115年全台考生拿到數A 15 級分</div>
-        </div>
-      </a>
-
-      <!-- ══════ 升高二 ══════ -->
-      <div class="group-label" id="g-sheng2">
-        <span class="g-badge">
-          <span class="g-tier">升高二</span>
-        </span>
-        <span class="g-desc">暑期讀書班・一個暑假超前一個學期</span>
-      </div>
-
-      <!-- 暑期讀書班 -->
-      <a class="card card-dushu" href="dushu.html">
-        <div class="card-dushu-left">
-          <div class="card-dushu-tag">暑期讀考班・升高二專屬</div>
-          <h2 class="card-dushu-title">
-            一個暑假，<br>
-            超前<span class="gold">一個學期</span>。
-          </h2>
-          <p class="card-dushu-sub">
-            每天 10:00–17:00 完整讀書節奏，全程有老師管理、<br>
-            隨時能問的輔導老師，一個暑假累積一整個學期的讀書量。
-          </p>
-          <div class="card-dushu-meta">
-            <span class="dushu-chip">📅 <b>7/13 － 8/21</b></span>
-            <span class="dushu-chip">🕙 週一到週五 10:00–17:00</span>
-            <span class="dushu-chip">仿真模擬考</span>
-          </div>
-        </div>
-        <div class="card-dushu-right">
-          <div class="card-dushu-price">
-            <span class="cur">$</span><span class="num">3,000</span>
-          </div>
-          <div class="card-dushu-price-label">全期・平均一天 100 元</div>
-          <span class="card-link">了解暑期讀書班 →</span>
-        </div>
-      </a>
-
     </div>
-  </div>
+    <div class="signup-ctas">
+      <a href="trial.html" class="btn-primary">立即報名</a>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,.35);">名額有限，報名從速</p>
+  </section>
+
+  <!-- LINE FLOAT -->
+  <a href="https://lin.ee/sUygaV8" target="_blank" class="line-float" aria-label="LINE 諮詢">
+    <svg width="28" height="28" viewBox="0 0 22 22" fill="none">
+      <path d="M11 2C6.03 2 2 5.63 2 10.1c0 3.97 3.52 7.3 8.28 7.93.32.07.76.21.87.49.1.25.07.64.03.9l-.14.85c-.04.25-.2 1 .87.54 1.08-.45 5.81-3.42 7.93-5.85C21.25 13.04 22 11.64 22 10.1 22 5.63 17.97 2 11 2z" fill="white"/>
+    </svg>
+  </a>
 
   <!-- FOOTER -->
   <footer>
-    © 2026 VICTOR<sup>+</sup> 得勝者文教・暑期升學課程（國三升高一 ／ 升高二）<br>
+    © 2026 VICTOR<sup>+</sup> 得勝者文教・金刀老師化學課<br>
     <span style="font-size:11px;">洽詢專線 <a href="tel:0223145818">02-2314-5818</a> / <a href="tel:0223140668">02-2314-0668</a>・台北市中山南路2巷5號（捷運北車M8出口）</span>
   </footer>
 
   <script>
+    // Nav scroll
     const nav = document.getElementById('topNav');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
+      nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    /* 站內錨點平滑捲動 */
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const id = link.getAttribute('href');
-        if (id.length < 2) return;
-        const target = document.querySelector(id);
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Accordion（桌面版）
+    document.querySelectorAll('.accord-head').forEach(function(head) {
+      head.addEventListener('click', function() {
+        if (window.innerWidth <= 768) return;
+        const item = this.closest('.accord-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.accord-item').forEach(i => i.classList.remove('open'));
+        document.querySelectorAll('.accord-head').forEach(h => h.classList.remove('active'));
+        if (!isOpen) {
+          item.classList.add('open');
+          this.classList.add('active');
+        }
       });
     });
-  </script>
 
+    // Pill chip → mobile desc card
+    document.querySelectorAll('.accord-head').forEach(function(head) {
+      head.addEventListener('click', function() {
+        if (window.innerWidth > 768) return;
+        const mobileDesc = document.getElementById('guideMobileDesc');
+        const item = this.closest('.accord-item');
+        const label = item.querySelector('.accord-label');
+        const bodyText = item.querySelector('.accord-body');
+        document.querySelectorAll('.accord-head').forEach(h => h.classList.remove('active'));
+        this.classList.add('active');
+        if (mobileDesc) {
+          mobileDesc.innerHTML =
+            (label ? '<strong>' + label.textContent + '</strong>' : '') +
+            (bodyText ? bodyText.textContent.trim() : '');
+        }
+      });
+    });
+
+    // 預設展開第一項
+    (function() {
+      const first = document.querySelector('.accord-item');
+      const firstHead = document.querySelector('.accord-head');
+      if (first && firstHead) {
+        first.classList.add('open');
+        firstHead.classList.add('active');
+        const mobileDesc = document.getElementById('guideMobileDesc');
+        if (mobileDesc) {
+          const label = first.querySelector('.accord-label');
+          const bodyText = first.querySelector('.accord-body');
+          mobileDesc.innerHTML =
+            (label ? '<strong>' + label.textContent + '</strong>' : '') +
+            (bodyText ? bodyText.textContent.trim() : '');
+        }
+      }
+    })();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+  </script>
 </body>
 </html>
